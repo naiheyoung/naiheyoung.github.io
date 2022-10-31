@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkblog"]=self["webpackChunkblog"]||[]).push([[637],{3637:function(n,e,l){l.r(e),l.d(e,{default:function(){return c}});var t=function(){var n=this,e=n._self._c;return e("el-main",[e("p",[n._v("我不认为今天我会葬身于此，")]),e("p",[n._v("             相反，我从来没有如此神清气爽过。--"),e("small",[n._v("天使投资人（海波东）")])])])},u=[],a={name:"Money",data:()=>({}),mounted(){this.$scroll()}},s=a,r=l(1001),o=(0,r.Z)(s,t,u,!1,null,"e8aa8d28",null),c=o.exports}}]);
+//# sourceMappingURL=637.16dab81a.js.map
