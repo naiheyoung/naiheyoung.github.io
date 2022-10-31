@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta content="text/html; charset=utf-8" charset="utf-8">
+		<title>Typing</title>
+		<style>
+			@font-face {
+				font-family: "Jet";
+				font-weight: 400;
+				src: url('./font/Jet.ttf');
+				font-display: swap;
+			}
+
+			:root {
+				font-size: 20px;
+			}
+
+			.typing {
+				width: 24ch;
+				animation: 5s typing steps(24, jump-none) forwards infinite,
+					blink .5s step-end infinite alternate;
+				white-space: nowrap;
+				overflow: hidden;
+				border-right: 3px solid;
+				font-family: 'Jet';
+			}
+
+			@keyframes typing {
+				from {
+					width: 1ch;
+				}
+
+				to {
+					width: 24ch;
+				}
+			}
+
+			@keyframes blink {
+				50% {
+					border-color: transparent;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="typing">
+				Naihe is a handsome boy
+			</div>
+		</div>
+	</body>
+</html>
