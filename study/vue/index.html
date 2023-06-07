@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue | Study Notes</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/study/logo.svg">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/study/assets/css/0.styles.c052bd8b.css" as="style"><link rel="preload" href="/study/assets/js/app.d1ae45fa.js" as="script"><link rel="preload" href="/study/assets/js/5.819200c8.js" as="script"><link rel="preload" href="/study/assets/js/15.a44418ba.js" as="script"><link rel="prefetch" href="/study/assets/js/10.dbc5a249.js"><link rel="prefetch" href="/study/assets/js/11.85e5a543.js"><link rel="prefetch" href="/study/assets/js/12.e1291b1a.js"><link rel="prefetch" href="/study/assets/js/13.03ab5a34.js"><link rel="prefetch" href="/study/assets/js/14.8171d94a.js"><link rel="prefetch" href="/study/assets/js/16.82115cd2.js"><link rel="prefetch" href="/study/assets/js/17.d452a118.js"><link rel="prefetch" href="/study/assets/js/2.fb2799dc.js"><link rel="prefetch" href="/study/assets/js/3.4849fc52.js"><link rel="prefetch" href="/study/assets/js/4.5c767ca9.js"><link rel="prefetch" href="/study/assets/js/6.2f6f690b.js"><link rel="prefetch" href="/study/assets/js/7.49d348f4.js"><link rel="prefetch" href="/study/assets/js/8.79b268a1.js"><link rel="prefetch" href="/study/assets/js/9.4de928a5.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.c052bd8b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><img src="/study/logo.svg" alt="Study Notes" class="logo"> <span class="site-name can-hide">Study Notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/study/linux/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><a href="/study/spring/" class="nav-link">
+  Spring
+</a></div><div class="nav-item"><a href="/study/springboot/" class="nav-link">
+  SpringBoot
+</a></div><div class="nav-item"><a href="/study/es/" class="nav-link">
+  Elasticsearch
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="More" class="dropdown-title"><span class="title">More</span> <span class="arrow down"></span></button> <button type="button" aria-label="More" class="mobile-dropdown-title"><span class="title">More</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/study/mybatisplus/" class="nav-link">
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/study/springcloudgateway/" class="nav-link">
+  SpringCloudGateway
+</a></li><li class="dropdown-item"><!----> <a href="/study/vue/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Vue
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/study/linux/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><a href="/study/spring/" class="nav-link">
+  Spring
+</a></div><div class="nav-item"><a href="/study/springboot/" class="nav-link">
+  SpringBoot
+</a></div><div class="nav-item"><a href="/study/es/" class="nav-link">
+  Elasticsearch
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="More" class="dropdown-title"><span class="title">More</span> <span class="arrow down"></span></button> <button type="button" aria-label="More" class="mobile-dropdown-title"><span class="title">More</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/study/mybatisplus/" class="nav-link">
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/study/springcloudgateway/" class="nav-link">
+  SpringCloudGateway
+</a></li><li class="dropdown-item"><!----> <a href="/study/vue/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Vue
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/vue/#脚手架文件结构" class="sidebar-link">脚手架文件结构</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#关于不同版本的vue" class="sidebar-link">关于不同版本的Vue</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#vue-config-js配置文件" class="sidebar-link">vue.config.js配置文件</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#ref属性" class="sidebar-link">ref属性</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#配置项props" class="sidebar-link">配置项props</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#mixin-混入" class="sidebar-link">mixin（混入）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#插件" class="sidebar-link">插件</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#scoped样式" class="sidebar-link">scoped样式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#自定义事件" class="sidebar-link">自定义事件</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#全局事件总线-globaleventbus" class="sidebar-link">全局事件总线（GlobalEventBus）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#消息订阅与发布-pubsub" class="sidebar-link">消息订阅与发布（pubsub）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#nexttick" class="sidebar-link">nextTick</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#vue封装的过度与动画" class="sidebar-link">Vue封装的过度与动画</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#vue脚手架配置代理" class="sidebar-link">Vue脚手架配置代理</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#插槽" class="sidebar-link">插槽</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#vuex" class="sidebar-link">Vuex</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#getters的使用" class="sidebar-link">getters的使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#四个map方法的使用" class="sidebar-link">四个map方法的使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#模块化-命名引用" class="sidebar-link">模块化 + 命名引用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#路由" class="sidebar-link">路由</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#路由守卫" class="sidebar-link">路由守卫</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/vue/#路由器的两种工作模式" class="sidebar-link">路由器的两种工作模式</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue"><a href="#vue" class="header-anchor">#</a> Vue</h1> <h2 id="脚手架文件结构"><a href="#脚手架文件结构" class="header-anchor">#</a> 脚手架文件结构</h2> <img src="/study/assets/img/clijiegou.63efaec4.png"> <h2 id="关于不同版本的vue"><a href="#关于不同版本的vue" class="header-anchor">#</a> 关于不同版本的Vue</h2> <ul><li>vue.js与vue.runtime.xxx.js的区别：
+（1）vue.js是完整版的Vue，包含：核心功能+模板解析器
+（2）vue.runtime.xxx.js是运行版的Vue，只包含：核心功能，没有模板解析器</li> <li>因为vue.runtime.xxx.js没有模板解析器，所以不能使用template配置项，需要使用
+render函数接收到的createElement函数去指定具体内容</li></ul> <h2 id="vue-config-js配置文件"><a href="#vue-config-js配置文件" class="header-anchor">#</a> vue.config.js配置文件</h2> <blockquote><p>使用vue inspect &gt; output.js 可以查看到Vue脚手架的默认配置</p></blockquote> <blockquote><p>使用vue.config.js可以对脚手架进行个性化定制，详细见：https://cli.vuejs.org/zh</p></blockquote> <h2 id="ref属性"><a href="#ref属性" class="header-anchor">#</a> ref属性</h2> <div class="language- extra-class"><pre><code>1、被用来给元素或子组件注册引用信息（id的替代者）
+2、应用在html标签上获取的是真实dom元素，应用在组件标签上是组件实例对象（vc）
+3、使用方式
+            打标识：&lt;h5 ref=&quot;xxx&quot;&gt;......&lt;/h5&gt; 或 &lt;school ref=&quot;xxx&quot;/&gt;
+            获取：this.$refs.xxx
+</code></pre></div><h2 id="配置项props"><a href="#配置项props" class="header-anchor">#</a> 配置项props</h2> <div class="language- extra-class"><pre><code>    功能：让组件接收外部传过来的数据
+        （1）传递数据：
+                    &lt;food foodName=&quot;xxx&quot;/&gt;
+        （2）接收数据：
+                    第一种方式（只接收）：
+                        props: ['foodName']
+
+                    第二种方式（限制类型）：
+                        props: {
+                            foodName: String
+                        }
+
+                    第三种方式（限制类型、限制必要性、指定默认值）：
+                        props: {
+                            foodName: {
+                                type: String,
+                                required: true,
+                                default: '苹果'
+                            }
+                        }
+
+    备注：props是只读的，Vue底层会监测对props的修改，如果进行了修改，就会发出警告，若业务需求确实需要修改，可以复制props的内容到data中，然后修改data中的数据
+</code></pre></div><h2 id="mixin-混入"><a href="#mixin-混入" class="header-anchor">#</a> mixin（混入）</h2> <div class="language- extra-class"><pre><code>    功能：可以把多个组件共用的配置提取成一个混入对象
+    使用方式：
+            第一步定义混合：
+                            {
+                                data() {...},
+                                methods: {...},
+                                ...
+                            }
+            第二步使用混入：
+                                使用前需要先引入  import {xxx,xxx} from ''
+                            （1）全局混入：Vue.mixin(xxx)
+                            （2）局部混入：mixins: [xxx]
+</code></pre></div><h2 id="插件"><a href="#插件" class="header-anchor">#</a> 插件</h2> <div class="language- extra-class"><pre><code>    功能：用于增强Vue
+    本质：包含install方法的一个对象，install的第一个参数是Vue，第二个以后的参数是插件使用者传递的数据
+    定义插件：
+            {
+                install(Vue) {
+                    // 全局过滤器
+                    Vue.filter('mySlice', function(v){
+                        return v.slice(0,5)
+                    })
+                    //  全局指令
+                    Vue.directive('pink', {
+                        bind(element, binding) {
+                            element.value = binding.value
+                        },
+                        inserted(element) {
+                            element.style.color = 'pink'
+                            element.style.backgroundColor='white'
+                        },
+                        update(element, binding) {
+                            element.value = binding.value
+                        }
+                    })
+                    //  定义混入
+                    Vue.mixin({
+                        data() {
+                            return {
+                                x: 100,
+                                y: 99
+                            }
+                        },
+                    })
+                    // 给Vue原型添加一个方法
+                    Vue.prototype.hello = ()=&gt;{alert('你好，使用者')}
+                }
+            }
+    使用插件：先引入，然后Vue.use(xxx)
+</code></pre></div><h2 id="scoped样式"><a href="#scoped样式" class="header-anchor">#</a> scoped样式</h2> <div class="language- extra-class"><pre><code>    作用：让样式在局部生效，防止冲突
+    写法：&lt;style scoped&gt;
+</code></pre></div><h2 id="自定义事件"><a href="#自定义事件" class="header-anchor">#</a> 自定义事件</h2> <div class="language- extra-class"><pre><code>    1、一种组件间通信的方式，适用于：子组件 ===&gt; 父组件
+    2、使用场景：A是父组件，B是子组件，B想给A传数据，那么就要在A中给B绑定自定义事件（事件的回调在A中）
+    3、绑定自定义事件：
+        （1）第一种方式，在父组件中：&lt;anime :getAnimeName=&quot;getAnimeName&quot;/&gt;
+        （2）第二种方式，在父组件中：
+                                        &lt;anime ref=&quot;anime&quot;/&gt;
+                                        ......
+                                        mounted() {
+                                            this.$refs.anime.$on('getAnimeName', this.getAnimeName)
+                                        }
+        （3）若想让自定义事件只能触发一次，可以使用once修饰符或者$once()方法
+    4、触发自定义事件：this.$emit('事件名', 数据) 不需要，数据也可以不写
+    5、解绑自定义事件：this.$off('事件名')  this.$off(['事件名', '事件名']) this.$off() --解绑所有事件
+    6、组件上也可以绑定原生自定义事件   需要使用native修饰符    @click.native
+    7、注意：
+                通过this.$ref.xxx.$on(‘事件名’, 回调函数)绑定自定义事件时，回调要么配置在methods中要么使用箭头函数，否则this指向会出现问题
+</code></pre></div><h2 id="全局事件总线-globaleventbus"><a href="#全局事件总线-globaleventbus" class="header-anchor">#</a> 全局事件总线（GlobalEventBus）</h2> <div class="language- extra-class"><pre><code>        1、一种组件间通信的方式，适用于任意组件间通信
+        2、安装全局事件总线：
+                new Vue({
+                    ......
+                    beforeCreate() {
+                        Vue.prototype.$bus = this   // 安装全局事件总线，$bus就是当前应用的vm
+                    },
+                    ......
+                })
+        3、使用全局事件总线：
+                （1）接收数据：A组件想接收数据，则在A组件中给$bus绑定自定义事件，事件的回调留在A组件自身
+                            methods() {
+                                demo(data) {
+                                    ......
+                                }
+                            }
+                            mounted() {
+                                this.$bus.$on('xxx', this.demo)
+                            }
+                    （2）提供数据：this.$bus.$emit('xxx', 数据)
+        4、最好在beforeDestroy钩子中，用$off去解绑当前组件所用到的事件
+</code></pre></div><h2 id="消息订阅与发布-pubsub"><a href="#消息订阅与发布-pubsub" class="header-anchor">#</a> 消息订阅与发布（pubsub）</h2> <div class="language- extra-class"><pre><code>    1、一种组件间通信的方式，适用于任意组件间通信
+    2、使用步骤：
+            （1）安装pubsub：npm install pubsub-js
+            （2）import pubsub from 'pubsub-js'
+            （3）接收数据：A组件想接收数据，则在A中订阅消息，订阅的回调留在A组件自身
+                                    mounted() {
+                                        // 每一个消息订阅都会有唯一的ID
+                                        this.pubId = pubsub.subscribe('demo', (msgName, data) =&gt;{
+                                            console.log(msgName, data);
+                                            this.receiveData = data;
+                                        })
+                                    },
+                                    beforeDestroy() {
+                                        // 根据ID取消订阅
+                                        pubsub.unscribe(this.pubId)
+                                    }
+            （4）提供数据：
+                                    methods: {
+                                        sendName() {
+                                            //          订阅的消息名，数据
+                                            pubsub.publish('demo', this.studentName)
+                                        }
+                                    }
+            （5）取消订阅：
+                                    beforeDestroy() {
+                                        // 根据ID取消订阅
+                                        pubsub.unscribe(this.pubId)
+                                    }
+    ### 也可以使用其他的库
+</code></pre></div><h2 id="nexttick"><a href="#nexttick" class="header-anchor">#</a> nextTick</h2> <div class="language- extra-class"><pre><code>        1、语法：this.$nextTick(回调函数)
+        2、作用：在下一次DOM更新结束后执行其回调函数
+        3、什么时候用：当数据改变后，要基于更新后的新DOM进行某些操作时，要在nextTick指定的回调函数中执行
+</code></pre></div><h2 id="vue封装的过度与动画"><a href="#vue封装的过度与动画" class="header-anchor">#</a> Vue封装的过度与动画</h2> <img src="/study/assets/img/animate.d209d500.png"> <div class="language- extra-class"><pre><code>    1、作用：在插入、更新或移除DOM元素时，在合适的时候给元素添加样式类名
+    2、图示：👆
+    3、写法：
+        （1）准备好样式：
+                元素进入的样式：
+                    1、v-enter：进入的起点
+                    2、v-enter-active：进入过程中
+                    3、v-enter-to：进入的终点
+                元素离开的样式：
+                    1、v-leave：离开的起点
+                    2、v-leave-active：离开过程中
+                    3、v-leave-to：离开的终点
+        （2）使用&amp;lt;transition&gt;包裹要过度的元素，并配置name属性：
+                        &amp;lt;transition name=&quot;naihe&quot;&gt;
+                            &amp;lt;h1 v-show=&quot;isShow&quot;&gt;Naihe真帅&lt;h1/&gt;
+        （3）备注：若有多个元素需要过度，则需要使用：&amp;lt;transition-group&gt;包裹，且需要给每个元素设置key值
+
+    4、也可以使用外部样式
+            先安装：npm install animate.css
+            网址：https://animate.style/
+            使用：
+                    &lt;transition
+                        name=&quot;animate__animated animate__bounce&quot;
+                        enter-active-class=&quot;animate__swing&quot;
+                        leave-active-class=&quot;animate__backOutUp&quot;
+                        appear&gt;
+</code></pre></div><h2 id="vue脚手架配置代理"><a href="#vue脚手架配置代理" class="header-anchor">#</a> Vue脚手架配置代理</h2> <div class="language- extra-class"><pre><code>    方法一、
+                在vue.config.js中添加如下配置
+                devServer: {
+                    proxy: 'http://localhost:8077'
+                }
+                说明：
+                    1、优点：配置简单，请求资源时直接发送给前端（8080）即可
+                    2、缺点：不能配置多个代理，不能灵活控制请求是否走代理
+                    3、工作方式：请求不存在资源时，请求会转发给服务器（优先匹配前端资源）
+    方法二、
+                编写vue.config.js配置具体代理规则
+                devServer: {
+                    proxy: {
+                        '/data': {
+                            target: 'http://localhost:8077',
+                            pathRewrite: {'^/data': ''},
+                            ws: true, // 用于支持websocket
+                            changeOrigin: true
+                        }
+                    }
+                }
+                说明：
+                    1、优点：可以配置多个代理，且可以灵活控制请求是否走代理
+                    2、缺点：配置略微繁琐，请求资源时必须加前缀
+</code></pre></div><h2 id="插槽"><a href="#插槽" class="header-anchor">#</a> 插槽</h2> <div class="language- extra-class"><pre><code>1、作用：让父组件可以向子组件指定位置插入html结构，也是一种组件间通信的方式，适用于父组件 ===&gt; 子组件
+2、分类：默认插槽、具名插槽、作用域插槽
+3、使用方式：
+        （1）默认插槽：
+                        父组件：
+                        &lt;Chacao&gt;
+                            &lt;div&gt;html结构&lt;/div&gt;
+                        &lt;/Chacao&gt;
+                        子组件：
+                        &lt;template&gt;
+                            &lt;div&gt;
+                                &lt;!-- 定义插槽 --&gt;
+                                &lt;slot&gt;这里可以写插槽默认内容&lt;/slot&gt;
+                            &lt;/div&gt;
+                        &lt;/template&gt;
+        （2）具名插槽：
+                        父组件：
+                        &lt;Chacao&gt;
+                            &lt;div slot=&quot;center&quot;&gt;html结构&lt;/div&gt;
+                            或者
+                            &lt;template v-slot:center&gt;&lt;/template&gt;
+                            注意：这种写法只适用于template
+                        &lt;/Chacao&gt;
+                        子组件：
+                        &lt;slot name=&quot;center&quot;&gt;&lt;/slot&gt;
+        （3）作用域插槽：
+                        理解：数据在组件自身，但根据数据生成的结构需要组件的使用者来决定
+                        具体编码：
+                            父组件：
+                            &lt;Chacao&gt;
+                                &lt;div scope=&quot;data&quot;&gt;html结构&lt;/div&gt;
+                            &lt;/Chacao&gt;
+                            子组件：
+                            &lt;slot :phones=&quot;phones&quot;&gt;&lt;/slot&gt;
+                            data() {
+                                return {
+                                    phones: [&quot;华为&quot;, &quot;小米&quot;, &quot;苹果&quot;],
+                                }
+                            }
+</code></pre></div><h2 id="vuex"><a href="#vuex" class="header-anchor">#</a> Vuex</h2> <div class="language- extra-class"><pre><code>概念：在Vue中实现集中式状态（数据）管理的一个Vue插件，对Vue应用中多个组件的共享状态进行集中式管理，也是一种组件间通信的方式，且适用于任意
+            组件间通信
+何时使用？
+            多个组件需要共享数据时
+搭建Vuex环境
+    1、创建文件：src/store/index.js
+                // 该文件用于创建Vuex中最为核心的store
+
+                // 引入vue
+                import Vue from 'vue'
+                // 引入vuex
+                import Vuex from 'vuex'
+
+                Vue.use(Vuex)
+                // 准备actions用于响应组件中的动作
+                const actions = {}
+                // 准备mutations用于操作数据（state）
+                const mutations = {}
+                // 准备state用于存储数据
+                const state = {}
+
+                // 创建store
+                export default new Vuex.Store({
+                    actions,
+                    mutations,
+                    state
+                })
+    2、在main.js中创建vm时传入store配置项
+                import store from './store/index'
+                new Vue({
+                    render: h =&gt; h(App),
+                    store,
+                }).$mount('#app')
+</code></pre></div><h2 id="getters的使用"><a href="#getters的使用" class="header-anchor">#</a> getters的使用</h2> <div class="language- extra-class"><pre><code>当state中的数据需要进行加工后再使用时，可以使用getters
+const getters = {
+    bigNum(state) {
+        return state.sum * 10
+    }
+}
+
+export default new Vuex.store({
+    ......,
+    getters
+})
+</code></pre></div><h2 id="四个map方法的使用"><a href="#四个map方法的使用" class="header-anchor">#</a> 四个map方法的使用</h2> <div class="language- extra-class"><pre><code>1、mapState方法：用于帮助我们映射state中的数据为计算属性
+    computed: {
+                        函数名   映射的属性名
+        ...mapState({name: 'name'}) / ...mapState(['name']) 这种写法state中必须要有name属性
+    }
+2、mapGetters方法：用于帮助我们映射getters中的数据为计算属性
+    computed: {
+        ...mapGetters({info: 'info'}) / ...mapState(['info']) 这种写法getters中必须要有info属性
+    }
+3、mapActions方法：用于帮助我们生成与actions对话的方法，即包含$store.dispatch(xxx)的函数，方法调用时需要传入相应的参数
+        @click(getName(value))
+4、mapMutations方法：用于帮助我们生成与mutations对话的方法，即包含$store.commit(xxx)的函数， 同上
+</code></pre></div><h2 id="模块化-命名引用"><a href="#模块化-命名引用" class="header-anchor">#</a> 模块化 + 命名引用</h2> <div class="language- extra-class"><pre><code>目的：让代码更好维护，让多种数据分类更加明确
+const a = {
+    namespaced: true, //开启命名空间
+    state: {},
+    mutations: {},
+    actions: {},
+    getters: {}
+}
+const b = {
+    namespaced: true, //开启命名空间
+    state: {},
+    mutations: {},
+    actions: {},
+    getters: {}
+}
+new Vuex.store({
+    modules: {
+        a,
+        b
+    }
+})
+开启命名空间后，组件中读取state数据：
+    // 方式一：自己直接读取
+    this.$store.state.a.list
+    // 方式二：借助apState读取
+    ...mapState('b', ['sum', 'bigNum' ,'name'])
+开启命名空间后，组件中读取getters数据：
+    // 方式一：自己直接读取
+    this.$store.getters['a/name']
+    // 方式二：借助mapGetters读取
+    ...mapGetters('a', ['name'])
+开启命名空间后，组件中调用dispatch：
+    // 方式一：自己直接调用dispatch
+    this.$store.dispatch('b/addPerson', person)
+    // 方式二：借助mapActions
+    ...mapActions('b', {add: 'addPerson'})
+开启命名空间后，组件中调用commit：
+    // 方式一：自己直接调用commit
+    this.$store.commit('b/getName', name)
+    // 方式二：借助mapMutations
+    ...mapMutations('b', {getName: 'getName'})
+</code></pre></div><h2 id="路由"><a href="#路由" class="header-anchor">#</a> 路由</h2> <div class="language- extra-class"><pre><code>    vue-router：vue的一个插件库。专门用来实现SPA应用/单页面应用
+    对SPA理解：
+        1、单页面Web应用（single page web application， SPA）
+        2、整个应用只有一个完整的页面
+        3、单击页面中的导航链接不会刷新页面，只会做页面的局部更新
+        4、数据需要通过ajax请求获取
+    路由的理解：
+        1、一个路由就是一组映射关系（key-value），多个路由需要由路由器进行管理
+        2、key为路径，value可能是funcation或component
+    路由的分类：
+        1、后端路由：
+            1）理解：value是funcation，用于处理客户端提交的请求
+            2）工作过程：服务器收到一个请求时，根据路径找到匹配的函数来处理请求，返回响应数据
+        2、前端路由：
+            1）理解：value是component，用于展示页面内容
+            2）工作过程：当浏览器路径改变时，对应的组件就会显示
+    基本使用：
+    	1、安装vue-router，npm install vue-router
+    	2、应用插件：Vue.use(VueRouter) 需要先引入
+    	3、编写router配置项
+                    // 该文件用于创建整个应用的路由器
+                    import VueRouter from 'vue-router'
+
+                    // 引入组件
+                    import Home from '../components/Home.vue'
+                    import Image from '../components/Image.vue'
+
+                    // 创建并暴露一个路由器
+                    export default new VueRouter({
+                        routes: [
+                            {
+                                path: '/home',
+                                component: Home
+                            },
+                            {
+                                path: '/image',
+                                component: Image
+                            }
+                        ]
+                    })
+        4、实现切换（active-class可配置高亮样式）
+                &lt;router-link to=&quot;/home&quot;&gt;&lt;/router-link&gt;
+        5、指定展示位置
+                &lt;router-view&gt;&lt;/router-view&gt;
+    注意：
+            1、一般pages文件夹存放路由组件
+                components文件夹存放一般组件
+            2、切换的路由会被销毁，需要的时候再挂载
+            3、每个组件都有自己的$route属性，里面存储着自己的路由信息
+            4、整个应用只有一个router，可以通过组件的$router属性获取
+    多级路由：
+        1、配置路由规则，使用children配置项
+                routes: [
+                    {
+                        path: '/home',
+                        component: Home
+                    },
+                    {
+                        path: '/image',
+                        component: Image,
+                        children: [
+                            {
+                                path: 'libai', // 此处一定不要写 /libai
+                                component: Lb
+                            },
+                            {
+                                path: 'juyoujing',
+                                component: Jyj
+                            },
+                            {
+                                path: 'shangguanwaner',
+                                component: Sgwr
+                            }
+                        ]
+                    }
+                ]
+        2、跳转：
+                &lt;router-link to=&quot;/image/shangguanwaner&quot;&gt;要写完整路径&lt;/router-link&gt;
+    query传参：
+        1、传递参数
+                1）字符串写法
+                &lt;router-link :to=&quot;`/image/libai?hero=${heroName}`&quot;&gt;&lt;/router-link&gt;
+                2）对象写法
+                &lt;router-link :to=&quot;{
+                    path: '/image/shangguanwaner',
+                    query: {
+                    hero: 'ShangGuanWanEr'
+                    }
+                }&quot;&gt;
+        2、接收参数
+                $route.query.xxx
+    命名路由：
+        作用：简化路由跳转
+        使用：
+            ...
+            routes: [
+                {
+                    name: 'zhuye',
+                    path: '/home',
+                    component: Home
+                }
+            ]
+
+            &lt;router-link :to=&quot;{name: 'zhuye'}&quot;&gt;&lt;/router-link&gt;
+    路由的params参数：
+        配置路由，声明接收params参数
+            routes: [
+                {
+                    name: 'zhuye',
+                    path: '/home/:hero', // 使用占位符声明接收params参数
+                    component: Home
+                }
+            ]
+        传递参数
+            &lt;router-link to=&quot;/home/参数&quot;&gt;&lt;/router-link&gt;
+            或
+            &lt;router-link :to=&quot;{
+                name: 'zhuye', // 使用params参数时，一定要使用name而不是path
+                params: {
+                    hero: 'xxx'
+                }
+            }&quot;&gt;&lt;/router-link&gt;
+        接收参数
+            $route.params.hero
+    路由的props配置：
+        作用：让路由组件更方便收到参数
+                routes: [
+                    {
+                        name: 'waner',
+                        path: '/waner',
+                        component: Waner,
+                        // 第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Waner组件
+                            props: {hero: '婉儿'}
+                        // 第二种写法：props值为布尔值，为true，把路由收到的所有params参数通过props传给Waner组件
+                            props: true
+                        // 第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Waner组件
+                            props($rourte) {
+                                return {
+                                    hero: $route.query.hero
+                                }
+                            }
+                        // 以上的方式，在需要收到参数的组件中需要使用props来接收
+                            props: ['hero']
+                    }
+                ]
+    &lt;router-link&gt;的replace属性：
+        作用：控制路由跳转时操作浏览器历史记录的模式
+            浏览器的历史记录有两种写入模式：push和replace，push是追加历史记录，replace是替换当前记录，默认为push
+        如何开启replace模式：&lt;router-link replace&gt;&lt;/router-link&gt;
+    编程式路由导航：
+        作用：不借助&lt;router-link&gt;实现路由跳转，让路由跳转更加灵活
+        编码：
+                this.$router.push({  // replace
+                    name: 'detail',
+                    params: {
+                        id: l.id,
+                        title: l.title
+                    }
+                })
+    缓存路由组件：
+        作用：让不展示的路由组件保持挂载，不被销毁
+        编码：
+                                :include=&quot;['组件名', '组件名']&quot;
+                &lt;keep-alive include=&quot;组件名&quot;&gt; 如果不写include，默认保持view里的所有组件
+                    &lt;router-view&gt;&lt;/router-view&gt;
+                &lt;/keep-alive&gt;
+    两个新的生命周期钩子：
+        作用：路由组件独有的两个钩子，用于捕获路由组件的激活状态
+            ：
+                activated：路由组件被激活时触发
+                deactivated：路由组件失活时触发
+</code></pre></div><h2 id="路由守卫"><a href="#路由守卫" class="header-anchor">#</a> 路由守卫</h2> <div class="language- extra-class"><pre><code>    1、作用：对路由权限进行控制
+    2、分类：全局守卫、独享守卫、组件内守卫
+    3、全局守卫：
+                // 全局前置路由守卫---初始化的时候被调用，每次路由切换之前调用
+                router.beforeEach((to, from, next) =&gt; {
+                    console.log(to, from);
+                    console.log('当前访问用户：' + sessionStorage.getItem('username'));
+                    if(to.meta.isAuth) {
+                        if(sessionStorage.getItem('username') === 'Naihe') {
+                            next();
+                        }else {
+                            console.log('%c 身份认证失败', 'color: pink;');
+                        }
+                    }else {
+                        next();
+                    }
+                })
+
+                // 全局后置路由守卫---初始化的时候被调用，每次路由切换后调用
+                router.afterEach((to, from) =&gt; {
+                    console.log(from);
+                    document.title = to.meta.title || '灵云系统'
+                })
+    4、独享守卫：
+                独享守卫只有一个进入前
+                beforeEnter: (to, from, next) =&gt; {
+                    console.log(sessionStorage.getItem('username') + `访问了${to.meta.title}`);
+                    if(to.meta.isAuth) {
+                        if(sessionStorage.getItem('username') === 'Naihe') {
+                            console.log(from);
+                            next();
+                            console.log('结果：%c 通过', 'color: green;');
+                        }else {
+                            console.log('结果：%c 身份认证失败', 'color: red;');
+                        }
+                    }
+                }
+    5、组件内守卫：
+                beforeRouteEnter (to, from, next) {// 通过路由规则，进入该组件时被调用
+                    console.log(to, from);
+                    next()
+                },
+                beforeRouteLeave (to, from, next) {// 通过路由规则，离开该组件时被调用
+                    console.log(to, from);
+                    next()
+                }
+</code></pre></div><h2 id="路由器的两种工作模式"><a href="#路由器的两种工作模式" class="header-anchor">#</a> 路由器的两种工作模式</h2> <div class="language- extra-class"><pre><code>    hash、history
+    1、对于一个url来说，什么是hash值？
+                #及其后面的内容就是hash值
+    2、hash值不会包含在HTTP请求中，即：hash值不会带给服务器
+    3、hash模式：
+            1）地址中永远带着#号，不美观
+            2）若以后将地址通过第三方手机app分享，若app校验严格，则地址会被标记为不合法
+            3）兼容性较好
+    4、history模式：
+            1）地址干净，美观
+            2）兼容性和hash模式相比较差
+            3）应用部署上线时需要后端人员支持，解决刷新页面时服务端404问题
+                    也可以使用第三方库：
+                        npm i connect-history-api-fallback
+                        const history = require('connect-history-api-fallback')
+                        xxx.use(history())
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.d1ae45fa.js" defer></script><script src="/study/assets/js/5.819200c8.js" defer></script><script src="/study/assets/js/15.a44418ba.js" defer></script>
+  </body>
+</html>
