@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Elasticsearch | Study Notes</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/study/logo.svg">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/study/assets/css/0.styles.c052bd8b.css" as="style"><link rel="preload" href="/study/assets/js/app.89b49cc1.js" as="script"><link rel="preload" href="/study/assets/js/5.819200c8.js" as="script"><link rel="preload" href="/study/assets/js/14.e7710afb.js" as="script"><link rel="prefetch" href="/study/assets/js/10.dbc5a249.js"><link rel="prefetch" href="/study/assets/js/11.85e5a543.js"><link rel="prefetch" href="/study/assets/js/12.e1291b1a.js"><link rel="prefetch" href="/study/assets/js/13.a3b9c001.js"><link rel="prefetch" href="/study/assets/js/15.78de5d79.js"><link rel="prefetch" href="/study/assets/js/16.82115cd2.js"><link rel="prefetch" href="/study/assets/js/17.d452a118.js"><link rel="prefetch" href="/study/assets/js/2.3522d1f3.js"><link rel="prefetch" href="/study/assets/js/3.59e5e7a5.js"><link rel="prefetch" href="/study/assets/js/4.60baceb2.js"><link rel="prefetch" href="/study/assets/js/6.31d99afa.js"><link rel="prefetch" href="/study/assets/js/7.49d348f4.js"><link rel="prefetch" href="/study/assets/js/8.05c74175.js"><link rel="prefetch" href="/study/assets/js/9.d075a982.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.c052bd8b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><img src="/study/logo.svg" alt="Study Notes" class="logo"> <span class="site-name can-hide">Study Notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/study/linux/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><a href="/study/spring/" class="nav-link">
+  Spring
+</a></div><div class="nav-item"><a href="/study/springboot/" class="nav-link">
+  SpringBoot
+</a></div><div class="nav-item"><a href="/study/es/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Elasticsearch
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="More" class="dropdown-title"><span class="title">More</span> <span class="arrow down"></span></button> <button type="button" aria-label="More" class="mobile-dropdown-title"><span class="title">More</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/study/mybatisplus/" class="nav-link">
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/study/springcloudgateway/" class="nav-link">
+  SpringCloudGateway
+</a></li><li class="dropdown-item"><!----> <a href="/study/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/study/linux/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><a href="/study/spring/" class="nav-link">
+  Spring
+</a></div><div class="nav-item"><a href="/study/springboot/" class="nav-link">
+  SpringBoot
+</a></div><div class="nav-item"><a href="/study/es/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Elasticsearch
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="More" class="dropdown-title"><span class="title">More</span> <span class="arrow down"></span></button> <button type="button" aria-label="More" class="mobile-dropdown-title"><span class="title">More</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/mybatis/" class="nav-link">
+  Mybatis
+</a></li><li class="dropdown-item"><!----> <a href="/study/mybatisplus/" class="nav-link">
+  MybatisPlus
+</a></li><li class="dropdown-item"><!----> <a href="/study/springcloudgateway/" class="nav-link">
+  SpringCloudGateway
+</a></li><li class="dropdown-item"><!----> <a href="/study/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Elasticsearch</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/es/#elasticsearch" class="sidebar-link">Elasticsearch</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/es/#基本操作" class="sidebar-link">基本操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/es/#创建索引" class="sidebar-link">创建索引</a></li><li class="sidebar-sub-header"><a href="/study/es/#创建规则" class="sidebar-link">创建规则</a></li><li class="sidebar-sub-header"><a href="/study/es/#删除索引" class="sidebar-link">删除索引</a></li><li class="sidebar-sub-header"><a href="/study/es/#查看索引信息" class="sidebar-link">查看索引信息</a></li><li class="sidebar-sub-header"><a href="/study/es/#查看状态值" class="sidebar-link">查看状态值</a></li><li class="sidebar-sub-header"><a href="/study/es/#查看索引库" class="sidebar-link">查看索引库</a></li><li class="sidebar-sub-header"><a href="/study/es/#修改文档" class="sidebar-link">修改文档</a></li><li class="sidebar-sub-header"><a href="/study/es/#删除文档" class="sidebar-link">删除文档</a></li><li class="sidebar-sub-header"><a href="/study/es/#根据id获取文档" class="sidebar-link">根据ID获取文档</a></li><li class="sidebar-sub-header"><a href="/study/es/#查询所有文档信息" class="sidebar-link">查询所有文档信息</a></li><li class="sidebar-sub-header"><a href="/study/es/#条件查询" class="sidebar-link">条件查询</a></li></ul></li><li><a href="/study/es/#高级查询" class="sidebar-link">高级查询</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/es/#指定返回的属性" class="sidebar-link">指定返回的属性</a></li><li class="sidebar-sub-header"><a href="/study/es/#排序" class="sidebar-link">排序</a></li><li class="sidebar-sub-header"><a href="/study/es/#分页" class="sidebar-link">分页</a></li><li class="sidebar-sub-header"><a href="/study/es/#多条件查询" class="sidebar-link">多条件查询</a></li><li class="sidebar-sub-header"><a href="/study/es/#or查询" class="sidebar-link">or查询</a></li><li class="sidebar-sub-header"><a href="/study/es/#反向查询" class="sidebar-link">反向查询</a></li><li class="sidebar-sub-header"><a href="/study/es/#过滤查询" class="sidebar-link">过滤查询</a></li><li class="sidebar-sub-header"><a href="/study/es/#匹配多个查询条件" class="sidebar-link">匹配多个查询条件</a></li><li class="sidebar-sub-header"><a href="/study/es/#精确查询" class="sidebar-link">精确查询</a></li><li class="sidebar-sub-header"><a href="/study/es/#高亮查询" class="sidebar-link">高亮查询</a></li><li class="sidebar-sub-header"><a href="/study/es/#自定义高亮" class="sidebar-link">自定义高亮</a></li><li class="sidebar-sub-header"><a href="/study/es/#多个高亮字段" class="sidebar-link">多个高亮字段</a></li></ul></li><li><a href="/study/es/#整合springboot" class="sidebar-link">整合SpringBoot</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/es/#导入依赖" class="sidebar-link">导入依赖</a></li><li class="sidebar-sub-header"><a href="/study/es/#统一版本" class="sidebar-link">统一版本</a></li><li class="sidebar-sub-header"><a href="/study/es/#配置类" class="sidebar-link">配置类</a></li><li class="sidebar-sub-header"><a href="/study/es/#elasticsearch配置密码" class="sidebar-link">Elasticsearch配置密码</a></li><li class="sidebar-sub-header"><a href="/study/es/#kibana配置密码" class="sidebar-link">Kibana配置密码</a></li><li class="sidebar-sub-header"><a href="/study/es/#springboot连接带有密码的elasticsearch" class="sidebar-link">SpringBoot连接带有密码的Elasticsearch</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="elasticsearch"><a href="#elasticsearch" class="header-anchor">#</a> Elasticsearch</h2> <p><strong>注：elasticsearch要求Java版本最低1.8</strong></p> <blockquote><p>下载（注：版本要和elasticsearch一致）</p></blockquote> <p><a href="https://www.elastic.co/cn/downloads/elasticsearch" target="_blank" rel="noopener noreferrer">elasticsearch下载地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="noopener noreferrer">elasticsearch-hand下载地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://www.elastic.co/cn/downloads/kibana" target="_blank" rel="noopener noreferrer">kibana下载地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases" target="_blank" rel="noopener noreferrer">ik分词插件下载地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <blockquote><p>配置</p></blockquote> <div class="language-txt extra-class"><pre class="language-txt"><code>elasticsearch跨域：在elasticsearch.yml中配置 http.cors.enabled: true http.cors.allow-origin: &quot;*&quot; 即可
+kibana中文：在kibana.yml中配置 i18n.locale: &quot;zh-CN&quot; 即可
+ik分词：将ik分词插件copy到elasticsearch下的plugins下即可
+</code></pre></div><blockquote><p>日志乱码</p></blockquote> <div class="language-txt extra-class"><pre class="language-txt"><code>在./config/jvm.options中配置 -Dfile.encoding=GBK 即可
+重启服务不要有空格
+</code></pre></div><blockquote><p>安装</p></blockquote> <div class="language-shell extra-class"><pre class="language-shell"><code>elasticsearch-hand安装：首先要有node环境
+然后执行 <span class="token function">npm</span> <span class="token function">install</span>
+	    <span class="token function">npm</span> run start 即可
+</code></pre></div><blockquote><p>Elasticsearch基本类型</p></blockquote> <div class="language-txt extra-class"><pre class="language-txt"><code>索引、文档、类型（types）、属性（fields）
+</code></pre></div><blockquote><p>分词</p></blockquote> <div class="language-http extra-class"><pre class="language-http"><code>GET _analyze
+{
+&quot;analyzer&quot;: &quot;ik_smart（最少拆分） / ik_max_word（最细拆分）&quot;, # keyword（会将text当做一个整体）、standard
+&quot;text&quot;: &quot;勇闯天下超级飞侠&quot;
+}
+</code></pre></div><blockquote><p>自定义分词</p></blockquote> <div class="language-txt extra-class"><pre class="language-txt"><code>在ik的config下创建分词字典naihe.dic 然后在当前目录下的配置文件中配置即可
+注：分词器只会对text类型的数据进行分词 如果是keyword类型的数据 是不会被分词器所解析的
+</code></pre></div><blockquote><p>Elasticsearch API</p></blockquote> <div class="language-http extra-class"><pre class="language-http"><code>- PUT       ip:port/索引名称/类型名称/文档id（创建文档指定文档ID）注：如果类型没有指定 则默认为_doc文档类型
+- POST      ip:port/索引名称/类型名称（创建文档随机文档ID）
+- POST      ip:port/索引名称/类型名称/文档ID/_update（修改文档）
+- DELETE    ip:port/索引名称/类型名称/文档ID（删除文档）
+- GET       ip:port/索引名称/类型名称/文档ID（查询文档通过文档ID）
+- POST      ip:port/索引名称/类型名称/_search（查询所有数据）
+</code></pre></div><blockquote><p>数据类型</p></blockquote> <div class="language-txt extra-class"><pre class="language-txt"><code>字符串类型（text、keyword）、数值类型（long、integer、short...）、日期类型（date）、布尔值类型、二进制类型等等
+</code></pre></div><blockquote><p>实例</p></blockquote> <h2 id="基本操作"><a href="#基本操作" class="header-anchor">#</a> 基本操作</h2> <h3 id="创建索引"><a href="#创建索引" class="header-anchor">#</a> 创建索引</h3> <div class="language-http extra-class"><pre class="language-http"><code>PUT /stuinfo/stu/s1
+{
+    &quot;name&quot;: &quot;小明&quot;,
+    &quot;age&quot;: 18,
+    &quot;sex&quot;: &quot;男&quot;
+}
+</code></pre></div><h3 id="创建规则"><a href="#创建规则" class="header-anchor">#</a> 创建规则</h3> <div class="language-http extra-class"><pre class="language-http"><code>PUT /stuinfo
+{
+    &quot;mappings&quot;: {
+        &quot;properties&quot;: {
+            &quot;name&quot;: {
+                &quot;type&quot;: &quot;text&quot;
+            },
+            &quot;age&quot;: {
+                &quot;type&quot;: &quot;long&quot;
+            },
+            &quot;sex&quot;: {
+                &quot;type&quot;: &quot;text&quot;
+            }
+        }
+    }
+}
+</code></pre></div><h3 id="删除索引"><a href="#删除索引" class="header-anchor">#</a> 删除索引</h3> <div class="language-http extra-class"><pre class="language-http"><code>DELETE /stuinfo
+</code></pre></div><h3 id="查看索引信息"><a href="#查看索引信息" class="header-anchor">#</a> 查看索引信息</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo
+</code></pre></div><h3 id="查看状态值"><a href="#查看状态值" class="header-anchor">#</a> 查看状态值</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET _cat/health
+</code></pre></div><h3 id="查看索引库"><a href="#查看索引库" class="header-anchor">#</a> 查看索引库</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET _cat/indices
+</code></pre></div><h3 id="修改文档"><a href="#修改文档" class="header-anchor">#</a> 修改文档</h3> <ul><li><div class="language-http extra-class"><pre class="language-http"><code>PUT /stuinfo/_doc/s1（这种方式是直接替换数据 如果某个属性没有修改值 则会被赋值为空）
+{
+    &quot;name&quot;: &quot;小明_update&quot;,
+    &quot;age&quot;: 18,
+    &quot;sex&quot;: &quot;男&quot;
+}
+</code></pre></div></li> <li><div class="language-http extra-class"><pre class="language-http"><code>POST /stuinfo/_doc/s1/_update（指定哪些属性就会修改哪些属性 没有指定的属性不会修改）
+{
+    &quot;doc&quot;: {
+        &quot;name&quot;: &quot;小明_king&quot;
+    }
+}
+</code></pre></div></li></ul> <h3 id="删除文档"><a href="#删除文档" class="header-anchor">#</a> 删除文档</h3> <div class="language-http extra-class"><pre class="language-http"><code>DELETE /stuinfo/_doc/s1
+</code></pre></div><h3 id="根据id获取文档"><a href="#根据id获取文档" class="header-anchor">#</a> 根据ID获取文档</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/s1
+</code></pre></div><h3 id="查询所有文档信息"><a href="#查询所有文档信息" class="header-anchor">#</a> 查询所有文档信息</h3> <div class="language-http extra-class"><pre class="language-http"><code>POST /stuinfo/_doc/_search
+</code></pre></div><h3 id="条件查询"><a href="#条件查询" class="header-anchor">#</a> 条件查询</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search?q=name:明
+等价于
+GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;name&quot;: &quot;明&quot;
+        }
+    }
+}
+</code></pre></div><h2 id="高级查询"><a href="#高级查询" class="header-anchor">#</a> 高级查询</h2> <h3 id="指定返回的属性"><a href="#指定返回的属性" class="header-anchor">#</a> 指定返回的属性</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;_source&quot;: [&quot;name&quot;, &quot;sex&quot;]
+}
+</code></pre></div><h3 id="排序"><a href="#排序" class="header-anchor">#</a> 排序</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;name&quot;: &quot;小&quot;
+        }
+    },
+    &quot;sort&quot;: [
+        {
+            &quot;age&quot;: { # 指定排序的字段
+                &quot;order&quot;: &quot;desc&quot; # desc：降序 asc：升序
+                   }
+        }
+    ]
+}
+</code></pre></div><h3 id="分页"><a href="#分页" class="header-anchor">#</a> 分页</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    ···
+        &quot;sort&quot;: [
+            {
+                &quot;age&quot;: {
+                    &quot;order&quot;: &quot;desc&quot;
+                }
+            }
+        ],
+	    &quot;from&quot;: 0, # 从第几条数据开始
+        &quot;size&quot;: 2 # 每页显示数量
+}
+</code></pre></div><h3 id="多条件查询"><a href="#多条件查询" class="header-anchor">#</a> 多条件查询</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;must&quot;: [ # 两个条件都要满足
+                     {
+                         &quot;match&quot;: {
+                             &quot;name&quot;: &quot;小&quot;
+                         }
+                     },
+                     {
+                         &quot;match&quot;: {
+                             &quot;sex&quot;: &quot;女&quot;
+                         }
+                     }
+             ]
+        }
+    }
+}
+</code></pre></div><h3 id="or查询"><a href="#or查询" class="header-anchor">#</a> or查询</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;should&quot;: [ # 两个条件只需满足一个即可
+                       {
+                           &quot;match&quot;: {
+                               &quot;name&quot;: &quot;小&quot;
+                           }
+                       },
+                       {
+                           &quot;match&quot;: {
+                               &quot;sex&quot;: &quot;女&quot;
+                           }
+                       }
+             ]
+        }
+    }
+}
+</code></pre></div><h3 id="反向查询"><a href="#反向查询" class="header-anchor">#</a> 反向查询</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;must_not&quot;: { # 查询年龄不为18的文档信息
+                &quot;match&quot;: {
+                    &quot;age&quot;: 18
+                }
+             }
+        }
+    }
+}
+</code></pre></div><h3 id="过滤查询"><a href="#过滤查询" class="header-anchor">#</a> 过滤查询</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;must&quot;: { # 姓名包含小
+                &quot;match&quot;: {
+                    &quot;name&quot;: &quot;小&quot;
+                }
+             },
+            &quot;filter&quot;: { # 过滤操作
+                &quot;range&quot;: {
+                    &quot;age&quot;: { # 过滤字段
+                        &quot;lt&quot;: 18 # lt：小于  gt：大于  lte：小于等于  gte：大于等于
+                     }
+                }
+             }
+        }
+    }
+}
+</code></pre></div><h3 id="匹配多个查询条件"><a href="#匹配多个查询条件" class="header-anchor">#</a> 匹配多个查询条件</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;name&quot;: &quot;光 明&quot; # 当有多个筛选值时 用空格（ ）分开即可 注：不管空格隔多远 最终都只会被解析为一个空格
+        }
+    }
+}
+</code></pre></div><h3 id="精确查询"><a href="#精确查询" class="header-anchor">#</a> 精确查询</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;term&quot;: { # term方式为精确查询     match方式会先使用分词器进行解析
+            &quot;name&quot;: &quot;光&quot;
+         }
+    }
+}
+</code></pre></div><h3 id="高亮查询"><a href="#高亮查询" class="header-anchor">#</a> 高亮查询</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;name&quot;: &quot;明&quot;
+        }
+    },
+    &quot;highlight&quot;: {
+        &quot;fields&quot;: { # 指定高亮显示字段
+            &quot;name&quot;: {}
+         }
+    }
+}
+</code></pre></div><h3 id="自定义高亮"><a href="#自定义高亮" class="header-anchor">#</a> 自定义高亮</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;match&quot;: {
+            &quot;name&quot;: &quot;明&quot;
+        }
+    },
+    &quot;highlight&quot;: {
+        &quot;pre_tags&quot;: &quot;&lt;p style='color: red;'&gt;&quot;, # 前缀
+        &quot;post_tags&quot;: &quot;&lt;/p&gt;&quot;, # 后缀
+        &quot;fields&quot;: {
+           	&quot;name&quot;: {}
+         }
+    }
+}
+</code></pre></div><h3 id="多个高亮字段"><a href="#多个高亮字段" class="header-anchor">#</a> 多个高亮字段</h3> <div class="language-http extra-class"><pre class="language-http"><code>GET /stuinfo/_doc/_search
+{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;should&quot;: [
+                {
+                    &quot;match&quot;: {
+                        &quot;name&quot;: &quot;明&quot;
+                    }
+                },
+                {
+                    &quot;match&quot;: {
+                        &quot;sex&quot;: &quot;男&quot;
+                    }
+                }
+            ]
+        }
+    },
+    &quot;highlight&quot;: {
+        &quot;pre_tags&quot;: &quot;&lt;p style='color: red;'&gt;&quot;,
+        &quot;post_tags&quot;: &quot;&lt;/p&gt;&quot;,
+        &quot;fields&quot;: {
+            &quot;name&quot;: {},
+            &quot;sex&quot;: {}
+        }
+    }
+}
+</code></pre></div><h2 id="整合springboot"><a href="#整合springboot" class="header-anchor">#</a> 整合SpringBoot</h2> <h3 id="导入依赖"><a href="#导入依赖" class="header-anchor">#</a> 导入依赖</h3> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-data-elasticsearch<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="统一版本"><a href="#统一版本" class="header-anchor">#</a> 统一版本</h3> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>elasticsearch.version</span><span class="token punctuation">&gt;</span></span>7.13.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>elasticsearch.version</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="配置类"><a href="#配置类" class="header-anchor">#</a> 配置类</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ElasticConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">RestHighLevelClient</span> <span class="token function">restHighLevelClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RestHighLevelClient</span><span class="token punctuation">(</span><span class="token class-name">RestClient</span><span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HttpHost</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span> <span class="token number">9200</span><span class="token punctuation">,</span> <span class="token string">&quot;http&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="elasticsearch配置密码"><a href="#elasticsearch配置密码" class="header-anchor">#</a> Elasticsearch配置密码</h3> <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/security-minimal-setup.html" target="_blank" rel="noopener noreferrer">官方文档7.13<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <blockquote><p>在./config/elasticsearch.yml中开启认证</p></blockquote> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">xpack.security.enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre></div><p><strong>重启Elasticsearch</strong></p> <blockquote><p>设置密码</p></blockquote> <ul><li><p>随机密码</p> <div class="language-shell extra-class"><pre class="language-shell"><code>elasticsearch-setup-passwords auto
+</code></pre></div></li> <li><p>自定义密码</p> <div class="language-shell extra-class"><pre class="language-shell"><code>elasticsearch-setup-passwords interactive
+</code></pre></div><p><em>需要设置的密码过多，建议密码设置成一样的，好记</em></p></li></ul> <img src="/study/assets/img/image-20220601103635464.27547ee0.png" alt="image-20220601103220909" style="zoom:80%;"> <blockquote><p>重新访问http://localhost:9200就需要登录验证了</p></blockquote> <img src="data:image/png;base64,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" alt="image-20220601104129689" style="zoom:80%;"> <blockquote><p>输入用户名密码即可正常访问</p> <p>用户名为elastic</p> <p>密码为之前设置的密码</p></blockquote> <p><strong>注：在设置好密码之后，就不能再执行elasticsearch-setup-passwords命令了</strong></p> <h3 id="kibana配置密码"><a href="#kibana配置密码" class="header-anchor">#</a> Kibana配置密码</h3> <blockquote><p>在kibana的配置文件kibana.yml中配置用户名</p></blockquote> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">elasticsearch.username</span><span class="token punctuation">:</span> <span class="token string">&quot;kibana_system&quot;</span>
+</code></pre></div><blockquote><p>设置密码</p></blockquote> <div class="language-shell extra-class"><pre class="language-shell"><code>kibana-keystore create
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>kibana-keystore <span class="token function">add</span> elasticsearch.password
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>Enter value <span class="token keyword">for</span> elasticsearch.password: 输入设置的elasticsearch密码即可
+</code></pre></div><p><strong>重启Kibana</strong></p> <blockquote><p>在Kibana中，可以管理之前配置的用户名和密码</p></blockquote> <h3 id="springboot连接带有密码的elasticsearch"><a href="#springboot连接带有密码的elasticsearch" class="header-anchor">#</a> SpringBoot连接带有密码的Elasticsearch</h3> <blockquote><p>在配置类中修改即可</p></blockquote> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ElasticConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">RestHighLevelClient</span> <span class="token function">restHighLevelClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 认证</span>
+        <span class="token keyword">final</span> <span class="token class-name">BasicCredentialsProvider</span> provider <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BasicCredentialsProvider</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        provider<span class="token punctuation">.</span><span class="token function">setCredentials</span><span class="token punctuation">(</span><span class="token class-name">AuthScope</span><span class="token punctuation">.</span><span class="token constant">ANY</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">UsernamePasswordCredentials</span><span class="token punctuation">(</span><span class="token string">&quot;username&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;password&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RestHighLevelClient</span><span class="token punctuation">(</span><span class="token class-name">RestClient</span><span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HttpHost</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span> <span class="token number">9200</span><span class="token punctuation">,</span> <span class="token string">&quot;http&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                                       <span class="token punctuation">.</span><span class="token function">setHttpClientConfigCallback</span><span class="token punctuation">(</span>httpAsyncClientBuilder <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+            							httpAsyncClientBuilder<span class="token punctuation">.</span><span class="token function">disableAuthCaching</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+							            <span class="token keyword">return</span> httpAsyncClientBuilder<span class="token punctuation">.</span><span class="token function">setDefaultCredentialsProvider</span><span class="token punctuation">(</span>provider<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.89b49cc1.js" defer></script><script src="/study/assets/js/5.819200c8.js" defer></script><script src="/study/assets/js/14.e7710afb.js" defer></script>
+  </body>
+</html>
