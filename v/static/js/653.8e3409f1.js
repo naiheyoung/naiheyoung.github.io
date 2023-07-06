@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkvue_cli"]=self["webpackChunkvue_cli"]||[]).push([[653],{653:function(e,u,r){r.r(u),r.d(u,{default:function(){return c}});var s=function(){var e=this,u=e._self._c;return u("div",{directives:[{name:"shadow",rawName:"v-shadow",value:{radius:8},expression:"{ radius: 8 }"}]},[u("p",[e._v("传递的参数: "+e._s(e.tel))])])},a=[],n={name:"RouteChild",props:["tel"],data(){return{}}},t=n,i=r(1001),l=(0,i.Z)(t,s,a,!1,null,"6356e728",null),c=l.exports}}]);
-//# sourceMappingURL=653.8e3409f1.js.map
